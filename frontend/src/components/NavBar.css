@@ -1,0 +1,46 @@
+.navbar {
+    background-color: #dbb2fc !important; /* Dark tone */
+    padding: 10px 20px;
+  }
+  
+  .navbar-brand {
+    color: #000000 !important;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-left: -10px !important;
+  }
+  
+  .nav-link {
+    color: #020081 !important;
+    margin-right: 15px;
+    transition: color 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: #465bd3 !important;
+  }
+  
+  .navbar .btn {
+    background-color: #8f1dec;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    font-weight: 600;
+  }
+  
+  .navbar .btn:hover {
+    background-color: #630caa;
+  }
+  .custom-toggle {
+    border: solid;
+    background-color: transparent;
+    color: rgb(119, 41, 192);
+  }
+  
+  .custom-toggle:focus {
+    box-shadow: none;
+  }
+  
+  
+  
+  

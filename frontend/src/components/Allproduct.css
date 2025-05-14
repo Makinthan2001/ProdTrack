@@ -1,0 +1,133 @@
+.product-container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Heading Styles */
+.text-center {
+  margin-bottom: 1.5rem;
+}
+
+/* Card Grid Layout */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.75rem;
+  margin-left: -0.75rem;
+}
+
+.col-12, .col-sm-6, .col-md-4, .col-lg-3 {
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}
+
+
+.custom-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+}
+
+
+.card-img-top {
+  object-fit: contain;
+  width: 68%;
+  height: 200px;
+  margin: 0 auto;
+  padding: 10px;
+  background: #ffffff;
+}
+
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 767.98px) {
+  .card-img-top {
+    width: 60%;
+  }
+}
+
+
+.loading-state, .error-state {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+}
+
+.edit-button, .delete-button {
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.3rem;
+  transition: all 0.2s ease;
+  min-width: 40px;
+}
+
+
+.edit-button {
+  background-color: #9bfd7d;
+  border-color: #9bfd7d;
+  color: #212529;
+}
+
+.edit-button:hover {
+  background-color: #80fc5a;
+  border-color: #80fc5a;
+  transform: scale(1.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.delete-button {
+  background-color: #abadfd;
+  border-color: #abadfd;
+  color: #212529;
+}
+
+.delete-button:hover {
+  background-color: #898bff;
+  border-color: #898bff;
+  transform: scale(1.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: #212529;
+}
+
+.edit-button svg, .delete-button svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0;
+}
+
+
+
+.edit-button svg, .delete-button svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
