@@ -22,7 +22,7 @@ const SideBar = () => {
 
     window.addEventListener("resize", handleResize);
 
-    // Cleanup on unmount
+    
     return () => {
       window.removeEventListener("resize", handleResize);
     };

@@ -40,13 +40,12 @@ const UpdateProduct = () => {
     formData.append("quantity", updateProduct.quantity);
     formData.append("price", updateProduct.price);
 
-    // Send image only if it's a new File object
     if (updateProduct.image instanceof File) {
       formData.append("image", updateProduct.image);
     }
 
     fetch(`http://localhost/project1/backend/UpdateProduct.php/${id}`, {
-      method: "POST", // or PUT if your PHP supports it
+      method: "POST",
       body: formData,
     })
       .then((res) => res.json())

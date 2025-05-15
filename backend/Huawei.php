@@ -10,7 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-// Using prepared statement
 $query = "SELECT id,product_name, price, quantity, img_url FROM products WHERE category = 'Huawei'";
 $stmt = $conn->prepare($query);
 
@@ -20,7 +19,6 @@ if ($stmt->execute()) {
     $products = [];
 
     while ($row = $result->fetch_assoc()) {
-        // prepend the correct image path
         $row['img_url'] = "http://localhost/project1/backend/uploads/" . basename($row['img_url']);
         $products[] = $row;
     }

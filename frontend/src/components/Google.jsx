@@ -36,7 +36,6 @@ const Google = () => {
       .then((result) => {
         if (result.isConfirmed) {
           
-          // inka than fetch use panni irukkan
           axios
             .delete(`http://localhost/project1/backend/DeleteProduct.php?id=${id}`)
             .then(() => {

@@ -10,13 +10,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-// Get the ID from the URL
 $requestUri = $_SERVER['REQUEST_URI'];
 $parts = explode("/", $requestUri);
 $id = end($parts);
 $id = intval($id);
 
-// Handle GET request (fetch product)
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $query = "SELECT id, product_name, price, quantity, img_url, category FROM products WHERE id = ?";
     $stmt = $conn->prepare($query);
@@ -36,12 +34,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     exit();
 }
 
-// Handle POST/PUT request (update product)
 if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_SERVER['REQUEST_METHOD'] === 'PUT') {
     $data = $_POST;
     $file = $_FILES['image'] ?? null;
     
-    // Basic validation
     if (empty($data['product_name']) || empty($data['category']) || 
         empty($data['quantity']) || empty($data['price'])) {
         echo json_encode(["error" => "All fields are required"]);
@@ -49,17 +45,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_SERVER['REQUEST_METHOD'] === 'PUT
     }
     
     try {
-        // If a new image was uploaded
         if ($file && $file['error'] === UPLOAD_ERR_OK) {
             $targetDir = "uploads/";
             $targetFile = $targetDir . basename($file["name"]);
             
-            // Move uploaded file
             if (!move_uploaded_file($file["tmp_name"], $targetFile)) {
                 throw new Exception("Failed to upload image");
             }
             
-            // Update with new image
             $query = "UPDATE products SET 
                       product_name = ?, 
                       category = ?, 
@@ -76,7 +69,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_SERVER['REQUEST_METHOD'] === 'PUT
                 $targetFile, 
                 $id);
         } else {
-            // Update without changing image
             $query = "UPDATE products SET 
                       product_name = ?, 
                       category = ?, 
